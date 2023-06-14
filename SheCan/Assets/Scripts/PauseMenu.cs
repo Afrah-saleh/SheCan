@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    private bool menuVisible = false;
     // Start is called before the first frame update
     
     void Update()
@@ -24,11 +26,16 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale  = 1f;
         GameIsPaused = false;
+        menuVisible = false;
+
     }
 
      void Pause(){
         pauseMenuUI.SetActive(true);
         Time.timeScale  = 0f;
         GameIsPaused = true;
+        menuVisible =true;
     }
+
+
 }
